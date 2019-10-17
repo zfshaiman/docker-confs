@@ -1,0 +1,20 @@
+root@localhost:# /usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d 
+  --name='letsencrypt' 
+  --net='bridge' 
+  --privileged=true 
+  -e TZ="America/New_York" 
+  -e HOST_OS="Unraid" 
+  -e 'EMAIL'='' 
+  -e 'URL'='' 
+  -e 'SUBDOMAINS'='www,' 
+  -e 'ONLY_SUBDOMAINS'='false' 
+  -e 'DHLEVEL'='2048' 
+  -e 'VALIDATION'='http' 
+  -e 'DNSPLUGIN'='' 
+  -e 'DUCKDNSTOKEN'='' 
+  -e 'PUID'='99' 
+  -e 'PGID'='100' 
+  -p '580:80/tcp' 
+  -p '5443:443/tcp' 
+  -v '/mnt/user/appdata/letsencrypt':'/config':'rw' 
+  'linuxserver/letsencrypt' 
