@@ -1,0 +1,14 @@
+# /usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d 
+  --name='binhex-radarr'
+  --net='bridge' 
+  --cpuset-cpus='2,3' 
+  -e TZ="America/New_York" 
+  -e HOST_OS="Unraid" 
+  -e 'UMASK'='000' 
+  -e 'PUID'='99' 
+  -e 'PGID'='100' 
+  -p '7878:7878/tcp' 
+  -v '/mnt/user/tempMedia/temp/':'/temp':'rw' 
+  -v '/mnt/user/Media/MOVIES/':'/media':'rw' 
+  -v '/mnt/user/appdata/binhex-radarr':'/config':'rw' 
+'binhex/arch-radarr' 
