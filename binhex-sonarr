@@ -1,0 +1,15 @@
+# /usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d 
+  --name='binhex-sonarr' 
+  --net='bridge' 
+  --cpuset-cpus='2,3' 
+  -e TZ="America/New_York" 
+  -e HOST_OS="Unraid" 
+  -e 'UMASK'='000' 
+  -e 'PUID'='99' 
+  -e 'PGID'='100' 
+  -p '8989:8989/tcp' 
+  -p '9897:9897/tcp' 
+  -v '/mnt/user/tempMedia/temp/':'/temp/':'rw' 
+  -v '/mnt/user/Media/TVSHOWS/':'/tvshows':'rw' 
+  -v '/mnt/user/appdata/binhex-sonarr':'/config':'rw' 
+  'binhex/arch-sonarr' 
