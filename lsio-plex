@@ -1,0 +1,26 @@
+root@localhost:# /usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d 
+  --name='plex' 
+  --net='host' 
+  -e TZ="America/New_York" 
+  -e HOST_OS="Unraid" 
+  -e 'PUID'='99' 
+  -e 'PGID'='100' 
+  -e 'VERSION'='latest' 
+  -e 'NVIDIA_VISIBLE_DEVICES'='' 
+  -e 'TCP_PORT_32400'='32400' 
+  -e 'TCP_PORT_3005'='3005' 
+  -e 'TCP_PORT_8324'='8324' 
+  -e 'TCP_PORT_32469'='32469' 
+  -e 'UDP_PORT_1900'='1900' 
+  -e 'UDP_PORT_32410'='32410' 
+  -e 'UDP_PORT_32412'='32412' 
+  -e 'UDP_PORT_32413'='32413' 
+  -e 'UDP_PORT_32414'='32414' 
+  -v '/mnt/user/Media/':'/media':'rw' 
+  -v '/tmp':'/transcode':'rw' 
+  -v '/mnt/user/appdata/plex':'/config':'rw' 
+  -v '':'/movies':'rw' 
+  -v '':'/tv':'rw' 
+  -v '':'/music':'rw' 
+  --restart unless-stopped
+  'linuxserver/plex' 
