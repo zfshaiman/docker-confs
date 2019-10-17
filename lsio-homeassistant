@@ -1,0 +1,8 @@
+root@localhost:# /usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d 
+  --name='home-assistant' 
+  --net='host' 
+  -e TZ="America/New_York" 
+  -e HOST_OS="Unraid" 
+  -v '/mnt/user/appdata/home-assistant':'/config':'rw' 
+  -v '/mnt/user/appdata/letsencrypt/etc/':'/certs/':'ro' 
+  'homeassistant/home-assistant' 
