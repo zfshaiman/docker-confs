@@ -1,0 +1,16 @@
+root@localhost:# /usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d 
+  --name='unifi-controller' 
+  --net='bridge' 
+  -e TZ="America/New_York" 
+  -e HOST_OS="Unraid" 
+  -e 'PUID'='99' 
+  -e 'PGID'='100' 
+  -p '3478:3478/udp' 
+  -p '8080:8080/tcp' 
+  -p '8443:8443/tcp' 
+  -p '8880:8880/tcp' 
+  -p '8843:8843/tcp' 
+  -p '10001:10001/udp' 
+  -v '/mnt/user/appdata/unifi-controller':'/config':'rw' 
+  --log-opt max-size=50m 
+  'linuxserver/unifi-controller'
